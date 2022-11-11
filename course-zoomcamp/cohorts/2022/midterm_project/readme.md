@@ -44,3 +44,30 @@ The output of this execution also tells you how you can execute the container; w
 ```bash
 docker run -it --rm -p 3000:3000 diabetes_risk_service:3xj4ktdbq6jrkaav serve --production
 ```
+
+
+once the model is executed, you can access it via its URL:
+http://localhost:3000/#/Service%20APIs/diabetes_risk_service__classify
+
+A typical request would include this information in JSON format:
+
+{
+  "age": 0,
+  "alopecia": "no",
+  "delayed_healing": "yes",
+  "gender": "no",
+  "genital_thrush": "no",
+  "irritability": "no",
+  "itching": "no",
+  "muscle_stiffness": "no",
+  "obesity": "no",
+  "partial_paresis": "no",
+  "polyuria": "no",
+  "polyphagia": "no",
+  "polydipsia": "yes",
+  "sudden_weight_loss": "yes",
+  "visual_blurring": "no",
+  "weakness": "yes"
+}
+
+And the output gives a probability that the person has diabetes.
