@@ -14,10 +14,11 @@ The notebook contains the analysis of the variables and the testing of the diffe
 
 The file train.py creates the model that was found to be best for the job. Once it is executed, it prints out the BentoML model tag as part of its output. The prediction service can then utilize this model.
 
-
----
+The predict.py file is the file that serves the model for consumption. When executed, it serves the model in a URL (if it is served locally, the URL is localhost:3000)
 
 ## BentoML
+
+Once the model is created after executing the train.py file, we can use BentoML. 
 
 To start the service, type:
 ```bash
