@@ -1,4 +1,4 @@
-Early Stage Diabetes risk Prediction Service  
+# Early Stage Diabetes risk Prediction Service  
 
 ---
 
@@ -16,7 +16,9 @@ The notebook uses the above link directly, but the same csv file is available in
 
 When we execute train.py, the model is created. The BentoML model tag is printed as an output. The prediction service can then utilize this model.
 
-BentoML
+---
+
+## BentoML
 
 To start the service, type:
 ```bash
@@ -74,8 +76,9 @@ A typical request would include this information in JSON format:
 
 And the output gives a probability that the person has diabetes.
 
+---
 
-DEPLOYMENT TO AWS:
+##DEPLOYMENT TO AWS:
 
 The steps to deploy to AWS are:
 - Create an AWS account
