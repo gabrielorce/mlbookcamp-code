@@ -1,6 +1,5 @@
 # Early Stage Diabetes risk Prediction Service  
 
----
 
 The Early stage diabetes risk prediction dataset is available here:
 [https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.)
@@ -78,7 +77,7 @@ And the output gives a probability that the person has diabetes.
 
 ---
 
-##DEPLOYMENT TO AWS:
+## DEPLOYMENT TO AWS:
 
 The steps to deploy to AWS are:
 - Create an AWS account
