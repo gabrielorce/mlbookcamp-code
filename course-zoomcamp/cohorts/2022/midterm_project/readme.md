@@ -1,0 +1,42 @@
+#Early Stage Diabetes risk Prediction Service  
+
+---
+
+The dataset contains the sign and symptom data of newly diabetic or would be diabetic patients.
+We will use this dataset to train a model that will predict the probabilty of a person having diabetes.
+
+
+The Early stage diabetes risk prediction dataset is available here:
+[https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.)
+
+The notebook uses the above link, but the same csv file is available in the data folder.
+
+
+
+
+When we execute train.py, the model is created. The BentoML model tag is printed as an output. The prediction service can then utilize this model.
+
+BentoML
+
+To start the service, type:
+```bash
+bentoml serve predict.py:svc
+```
+
+But instead of using this locally, BentoML allows us to create a deployable, which is defined by the contents of the bentofile.yaml. To create this deployable, write:
+```bash
+bentoml build
+```
+
+If all went well, you should get a reply similar to this:
+```bash
+Successfully built Bento(tag="diabetes_risk_service:3xj4ktdbq6jrkaav").
+```
+
+You can now find the contents of this deployable in the bentoml directory. This directory includes a Dockerfile, requirements files, and the model itself.
+TO cretae the docker image, go to the directory which holds the dockerfile and write:
+```bash
+bentoml containerize diabetes_risk_service:3xj4ktdbq6jrkaav
+```
+
+The output of this execution also tells you how you can execute the container.
