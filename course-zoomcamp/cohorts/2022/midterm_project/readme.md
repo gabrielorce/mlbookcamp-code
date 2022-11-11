@@ -51,6 +51,7 @@ http://localhost:3000/#/Service%20APIs/diabetes_risk_service__classify
 
 A typical request would include this information in JSON format:
 
+```bash
 {
   "age": 0,
   "alopecia": "no",
@@ -69,5 +70,21 @@ A typical request would include this information in JSON format:
   "visual_blurring": "no",
   "weakness": "yes"
 }
+```
 
 And the output gives a probability that the person has diabetes.
+
+
+DEPLOYMENT TO AWS:
+
+The steps to deploy to AWS are:
+- Create an AWS account
+- Download the AWS CLi tool, since you will need to use the command line
+- Upload the docker image we created with BentoML. For this, go to the Elastic Container Registry section of AWS, create a new repository named "prediction-service", go into it and click on the "View Push commands" button on the top-right of the screen. This will explain the commands you hav to enter in your machine so you can push the image you built into this registry
+- Once you have pushed the image, you can now use it. Go to AWS ECS (Elastic Container Service). Here you must first create a cluster ("prediction-service-cluster"). Once you have cretaed it, you must then go to "Task Definitions" to create a task (called "prediction-service-task"). Within this task you define a number of things, among them the container you will use.
+- Once all these stes are complete, you can go back to your cluster, select the "Tasks" tab, and then clcik on the task name ("prediction-service-task") so you can see important information, including the URL through which the container is available.
+- To access the server, place the URL and also the port number (<URL>:3000) on your web browser so you can interact with the prediction service.
+  
+  
+I was able to complete the above steps; the container has been deployed to Amazon ECS, and the prediction service can be accessed at this URL: 
+http://35.90.127.210:3000/
