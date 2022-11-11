@@ -8,12 +8,12 @@ The Early stage diabetes risk prediction dataset is available here:
 The dataset contains the sign and symptom data of newly diabetic or would be diabetic patients.
 We will use this dataset to train a model that will predict the probabilty of a person having diabetes.
 
-The notebook uses the above link directly, but the same csv file is available in the data folder.
+This project uses BentoML. BentoML allows you to create Machine Learning services that are ready to deploy and scale.
 
+The notebook contains the analysis of the variables and the testing of the different potential models. It calls the dataset from the above link directly, but the same csv file is available in the data folder.
 
+The file train.py creates the model that was found to be best for the job. Once it is executed, it prints out the BentoML model tag as part of its output. The prediction service can then utilize this model.
 
-
-When we execute train.py, the model is created. The BentoML model tag is printed as an output. The prediction service can then utilize this model.
 
 ---
 
